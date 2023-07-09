@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { SocketIOClient } from "../../../../infra/socket/socket-io-client"
 import { RemoteGetMarket } from "../../../../data/usecases/remote-get-market"
+import Table from "../../../../presentation/pages/table"
 
 export const MarketFactory = () => {
   const socketIOClient = new SocketIOClient()
@@ -12,5 +13,5 @@ export const MarketFactory = () => {
   }, [])
 
 
-  return <div>USerFactory</div>
+  return <Table />
 }
