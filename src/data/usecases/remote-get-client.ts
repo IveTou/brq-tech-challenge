@@ -2,6 +2,7 @@ import { Client } from "../../domain/models/client";
 import { GetClient } from "../../domain/usecases/get-client";
 import { SocketClient } from "../protocols/socket/socket-client";
 
+//Create a factory for this to avoid code repetition with remote-get-market
 export class RemoteGetClient implements GetClient {
   constructor (
     private readonly socketClient: SocketClient

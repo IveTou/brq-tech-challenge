@@ -1,5 +1,12 @@
 import React from "react"
 
-const User = () => <div>User</div>
+type Props = {
+  data: any
+}
 
+const User: React.FC<Props> = ({ data }) => {
+  console.log(data)
+
+  return <div>User</div>
+}
 export default User
