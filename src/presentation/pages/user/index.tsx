@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
+import useFetch from "../../hooks/useFetch"
+import { GetUser } from "../../../domain/usecases/get-user"
 
 type Props = {
-  data: any
+  remote: GetUser
 }
 
-const User: React.FC<Props> = ({ data }) => {
-  console.log(data)
+const User: React.FC<Props> = ({ remote }) => {
+  const [user, setUser] = useState()
+  useFetch(remote, data => console.log(data)) 
 
   return <div>User</div>
 }

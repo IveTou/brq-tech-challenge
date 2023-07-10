@@ -7,7 +7,6 @@ import useFetch from "../../../../presentation/hooks/useFetch"
 export const UserFactory = () => {
   const socketIOClient = useRef(new SocketIOClient())
   const remoteGetClient = new RemoteGetUser(socketIOClient.current)
-  const data = useFetch(remoteGetClient)
   
-  return <User data={data}/>
+  return <User remote={remoteGetClient}/>
 }
