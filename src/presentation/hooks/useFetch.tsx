@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { GetMarket } from "../../domain/usecases/get-market";
-import { GetClient } from "../../domain/usecases/get-client";
+import { GetUser } from "../../domain/usecases/get-user";
 
-function useFetch(remote: GetClient | GetMarket): any {
+function useFetch(remote: GetUser | GetMarket): any {
   const [data, setData] = useState()
 
   useEffect(() => {

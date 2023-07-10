@@ -1,14 +1,14 @@
-import { Client } from "../../domain/models/client";
-import { GetClient } from "../../domain/usecases/get-client";
+import { User } from "../../domain/models/user";
+import { GetUser } from "../../domain/usecases/get-user";
 import { SocketClient } from "../protocols/socket/socket-client";
 
 //Create a factory for this to avoid code repetition with remote-get-market
-export class RemoteGetClient implements GetClient {
+export class RemoteGetUser implements GetUser {
   constructor (
     private readonly socketClient: SocketClient
   ){}
 
-  async get(callback: (e: any) => any): Promise<Client> {
+  async get(callback: (e: any) => any): Promise<User> {
     return this.socketClient.on({ type: "client-connected", callback })
   }
 
